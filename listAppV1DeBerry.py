@@ -19,9 +19,10 @@ def mainProgram():
             choice = input("""1. Add to list ,
 2. Add a bunch of numbers,
 3. Return the value at an index,
-4. Random search,
-5. Print contents of list
-6. Exit program.  """)
+4. Random Search,
+5. Linear Search,
+6. Print contents of list
+7. Exit program.  """)
             #add a way to catch bad user responses
             if choice == "1":
                 addToList()
@@ -32,6 +33,8 @@ def mainProgram():
             elif choice == "4":
                 randomSearch()
             elif choice == "5":
+                linearSearch()
+            elif choice == "6":
                 print(myList)
             else:
                 break
