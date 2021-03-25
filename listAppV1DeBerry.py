@@ -85,6 +85,16 @@ def linearSearch():
     for x in range(len(myList)):
         print("Your item is at index posistion {}".format(x))
 
+def printList():
+    if len(uniqueList) == 0:
+        print(myList)
+    else:
+        which0ne = input("Which list? sorted or unsorted?  ")
+        if Which0ne.lower() == "sorted":
+            print(uniqueList)
+        else:
+            print(myList)
+
 #dunder main -> Double Underscore---dunder
 if __name__ == "__main__":
     mainProgram()
