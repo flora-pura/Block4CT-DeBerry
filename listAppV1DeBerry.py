@@ -1,14 +1,14 @@
 """
-
 Program Goals:
 1. Get input from the user (at multiple points)
 2. We need to convert some of this input to INTs from StRs
 3. We need to provide choices to the user
     a. Add more values to the list
     b. Return a value a speciftic index
-
 """
+import random
 myList = []
+uniqueList = []
 
 def mainProgram():
     #build a while loop here!
@@ -21,8 +21,9 @@ def mainProgram():
 3. Return the value at an index,
 4. Random Search,
 5. Linear Search,
-6. Print contents of list
-7. Exit program.  """)
+6. Sort list,
+7. Print contents of list
+8. Exit program.  """)
             #add a way to catch bad user responses
             if choice == "1":
                 addToList()
@@ -35,6 +36,8 @@ def mainProgram():
             elif choice == "5":
                 linearSearch()
             elif choice == "6":
+                sortList(myList)
+            elif choice == "7":
                 print(myList)
             else:
                 break
@@ -61,6 +64,16 @@ def indexValues():
     print("Ohhh! I heard you a particular piece of data!")
     indexPos = input("What index position are you curious about?  ")
     print(myList[int(indexPos)])
+
+def sortList(myList):
+    print("A little birdy told me you needed some data")
+    for x in myList:
+        if x not in uniqueList:
+            uniqueList.append
+    uniqueList.sort()
+    showMe = input("Wanna see your new list?  Y/N")
+    if showMe.lower() == "y":
+        print(uniqueList)
 
 def randomSearch():
     print("RaNDoM SeaRCH!")
