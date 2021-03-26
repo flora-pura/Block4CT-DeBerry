@@ -5,7 +5,7 @@ def factorial(x):
     else:
         return(x * factorial(x-1))
 
-if__name__ == "__main__":
+if __name__ == "__main__":
 
     num = input("What do you want the factorial of?  ")
     print("The factorial of " , num, "is", factorial(int(num)))
