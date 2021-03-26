@@ -39,6 +39,7 @@ def mainProgram():
                 sortList(myList)
             elif choice == "7":
                 print(myList)
+            
             else:
                 break
             
@@ -84,6 +85,14 @@ def linearSearch():
     searchItem = input("What you lookin for pardner?  ")
     for x in range(len(myList)):
         print("Your item is at index posistion {}".format(x))
+
+def recursiveBinarySearch(uniqueList, low, high, x):
+    if high >= low:
+        mid = (high + low) // 2
+
+    
+    else:
+        print("Your number isn't here!")
 
 def printList():
     if len(uniqueList) == 0:
