@@ -21,9 +21,11 @@ def mainProgram():
 3. Return the value at an index,
 4. Random Search,
 5. Linear Search,
-6. Sort list,
-7. Print contents of list
-8. Exit program.  """)
+6. Recursive Binary Search,
+7. Iterative Binary Search
+7. Sort list,
+8. Print contents of list
+9. Exit program.  """)
             #add a way to catch bad user responses
             if choice == "1":
                 addToList()
@@ -36,9 +38,19 @@ def mainProgram():
             elif choice == "5":
                 linearSearch()
             elif choice == "6":
-                sortList(myList)
+                searchItem = input("What are you looking for?  ") 
+                recursiveBinarySearch(uniqueList, 0, len(uniqueList)-1, int(searchItem))
             elif choice == "7":
-                print(myList)
+                searchItem = input("What are you looking for?  ") 
+                result = iterativeBinarySearch(uniqueList,  int(searchItem))
+                if result != -1:
+                    print("Your number is at index {}".format(result))
+                else:
+                    print("Your number isn't in this list!")
+            elif choice == "8":
+                sortList(myList)
+            elif choice == "9":
+                printList()
             
             else:
                 break
@@ -90,9 +102,31 @@ def recursiveBinarySearch(uniqueList, low, high, x):
     if high >= low:
         mid = (high + low) // 2
 
+        if uniqueList[mid] == x:
+            print("You ding dang found it at index position {}".format(mid))
+            return mid
+        elif uniqueList[mid] > x:
+            return recursiveBinarySearch(uniqueList, low, mid -1, x)
+        else: recursiveBinarySearch(uniqueList, mid + 1, high, x)
     
     else:
         print("Your number isn't here!")
+
+def iterativeBinarySearch(uniqueList, x):
+    low = 0
+    high = len(uniqueList)-1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low) // 2
+
+        if uniqueList[mid] < x:
+            low = mid + 1
+            elif uniqueList[mid] > x:
+                high = mid - 1
+            else:
+                return mid
+        return -1
 
 def printList():
     if len(uniqueList) == 0:
